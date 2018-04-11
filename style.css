@@ -1,7 +1,7 @@
 body {
   max-width: 1800px;
   margin: auto;
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif; }
+  font-family: "Playfair Display", Georgia; }
 
 /* ------  Header & Navbar -------  */
 header {
@@ -175,7 +175,7 @@ header {
       display: flex;
       flex-direction: column;
       padding-right: 100px;
-      font-family: "Playfair Display", Georgia, "Times New Roman", serif; }
+      font-family: "Playfair Display", Georgia; }
       .welcome-container .welcome-wrapper .welcome-text h3 {
         font-size: 48px;
         color: #1f1f1f; }
@@ -226,5 +226,57 @@ header {
       .menu-wrapper .menu-col .menu-item-img img {
         height: 100%;
         width: 100%; }
+
+/* **** Testimonials *** */
+#testimonials {
+  height: 700px;
+  background-color: #F5F5F5; }
+
+#testi-wrapper {
+  padding-top: 100px;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center; }
+
+.testi-row-1 {
+  text-align: center; }
+  .testi-row-1 h3 {
+    font-size: 1.3em; }
+  .testi-row-1 hr {
+    border: 2px solid #c39d63;
+    width: 50%; }
+  .testi-row-1 h4 {
+    font-size: 2em;
+    padding-top: 30px;
+    padding-bottom: 30px; }
+
+.testi-row-2 ul {
+  max-width: 1280px;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding-left: 0; }
+  .testi-row-2 ul li {
+    padding: 20px; }
+    .testi-row-2 ul li .stars {
+      padding-bottom: 30px;
+      color: #c39d63; }
+    .testi-row-2 ul li .testi-header p {
+      width: 70%;
+      font-size: 1.3em;
+      font-weight: 500; }
+    .testi-row-2 ul li .testi-content p {
+      font-size: 1.1em;
+      color: #939393;
+      padding-right: 20px;
+      padding-bottom: 30px; }
+    .testi-row-2 ul li .testi-content hr {
+      width: 30%;
+      border: 2px solid #c39d63;
+      margin-left: 0; }
+    .testi-row-2 ul li .testi-content span {
+      color: #1f1f1f; }
 
 /*# sourceMappingURL=style.css.map */
