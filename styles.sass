@@ -281,6 +281,76 @@ header
                 margin-left: 0
             span
                 color: $myBlack
-                   
 
 
+                 
+/* **** Hours of Operation and Subscribe Form *** */
+#actions
+    height: 850px
+    background-image: url(images/footer_bg.jpg)
+    background-size: cover
+    background-color: $myBlack
+    background-blend-mode: multiply
+    display: flex
+    justify-content: center
+#actions-wrapper
+    height: 80%
+    width: 1280px
+    margin: auto
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    align-items: center
+    color: $bg-color
+.action-col
+    height: 100%
+    width: 45%
+    background-color: $myBlack
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    padding-top: 70px
+    text-align: center
+    letter-spacing: 2px
+.hours
+    width: 60% 
+    hr
+        border: 1px solid $brownish
+    input
+        margin-top: 50px
+        padding: 8px 40px
+        background-color: $brownish
+        color: $bg-color
+        border: none
+        font-weight: 600
+        letter-spacing: 2px
+.contact
+    input
+        padding: 8px 30px
+        background-color: $brownish
+        color: $bg-color
+        border: none
+        font-weight: 600
+        letter-spacing: 2px
+.subscribe
+    padding-top: 30px
+    form
+        animation: slide-right 900ms ease-in-out normal forwards
+        padding-top: 30px
+        input[type="button"]
+            background-color: $brownish
+            color: $bg-color
+            border: none
+            font-weight: 600
+            letter-spacing: 2px
+            width: 100%
+            padding: 7px
+
+@keyframes slide-right
+    0%
+        opacity: 0
+        transform: translateY(-50px)
+    100%
+        opacity: 1
+        transform: translateY(0)
