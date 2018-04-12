@@ -89,16 +89,26 @@ header
     position: absolute
     top: 50%
     left: 50%
+    -webkit-transform: translate(-50%, -50%)
+    -ms-transform: translate(-50%, -50%)
     transform: translate(-50%, -50%)
+    display: -webkit-box
+    display: -ms-flexbox
     display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
     flex-direction: column
+    -ms-flex-pack: distribute
     justify-content: space-around
+    -webkit-box-align: center
+    -ms-flex-align: center
     align-items: center
     height: 50%
     color: $bg-color
     text-align: center
     h2
-        font-size: 4em
+        font-size: 3em
         letter-spacing: 5px
     p
         text-transform: none
@@ -107,11 +117,14 @@ header
         color: $font-color
         padding: 20px
         background-color: rgba(#fff, .05)
+        margin-bottom: 30px
     a
         padding: 10px 20px
         background-color: transparant
         border: 2px solid white
         color: $bg-color
+        -webkit-transition: all 300ms ease-in-out
+        -o-transition: all 300ms ease-in-out
         transition: all 300ms ease-in-out
         &:hover
             background-color: $font-color
@@ -136,12 +149,18 @@ header
 @media only screen and (min-width : 768px) and (max-width : 991px)
     header
         height: 600px
-        background-size: contain
+        background-size: auto 650px
     .navbar-brand
         padding-left: 50px
         h1
             letter-spacing: 5px
             font-size: 1.3em
+    .heading
+        h2
+            font-size: 2.5em
+        p
+            font-size: 16px
+            padding: 15px
 
 @media only screen and (min-width : 576px) and (max-width : 768px)
     header
@@ -152,6 +171,13 @@ header
         h1
             letter-spacing: 4px
             font-size: 1.2em
+    .heading
+        width: 70%
+        h2
+            font-size: 1.8em
+        p
+            font-size: 14px
+            padding: 12px
 
 @media only screen and (max-width : 576px)
     header
@@ -164,36 +190,118 @@ header
         h1
             letter-spacing: 1px
             font-size: .8em
+    .heading
+        width: 85%
+        h2
+            font-size: 1.4em
+        p
+            font-size: 12px
+            padding: 10px
+            margin-bottom: 20px
+            line-height: 1.5em
 
 /* **** Welcome Section ***** */
 .welcome-container
     height: 600px
+    display: -webkit-box
+    display: -ms-flexbox
     display: flex
+    -webkit-box-pack: center
+    -ms-flex-pack: center
     justify-content: center
+.welcome-wrapper
+    max-width: 1150px
+    margin: auto
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-orient: horizontal
+    -webkit-box-direction: normal
+    -ms-flex-direction: row
+    flex-direction: row
+    -ms-flex-pack: distribute
+    justify-content: space-around
+.welcome-text
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+    padding-left: 20px
+    padding-right: 70px
+    font-family: $font-family
+    width: 50%
+    h3
+        font-size: 48px
+        color: $myBlack
+    hr
+        width: 40%
+        border: 2px solid $brownish
+        margin-bottom: 40px
+        margin-left: 0
+    p
+        line-height: 2em
+        color: #939393
+.welcome-img
+    max-width: 400px
+    img
+        width: 100%
+        height: auto
+
+/* Media Query - Responsive Welcome section */
+@media only screen and (min-width : 768px) and (max-width : 991px)
+    .welcome-text
+        h3
+            font-size: 32px
+
+@media only screen and (min-width : 576px) and (max-width : 768px)
+    .welcome-container
+        height: 750px
     .welcome-wrapper
-        width: 1100px
+        width: 80%
         margin: auto
-        display: flex
-        flex-direction: row
-        .welcome-text
-            display: flex
-            flex-direction: column
-            padding-right: 100px
-            font-family: $font-family
-            h3
-                font-size: 48px
-                color: $myBlack
-            hr
-                width: 40%
-                border: 2px solid $brownish
-                margin-bottom: 40px
-                margin-left: 0
-            p
-                line-height: 2em
-                color: #939393
-        .welcome-img
-            img
-                width: 500px
+        -webkit-box-orient: vertical
+        -webkit-box-direction: normal
+        -ms-flex-direction: column
+        flex-direction: column
+        -webkit-box-align: start
+        -ms-flex-align: start
+        align-items: flex-start
+    .welcome-text
+        width: 100%
+        margin: auto
+        padding-left: 0
+        padding-right: 0px
+        padding-bottom: 20px
+        h3
+            font-size: 28px
+
+@media only screen and (max-width : 576px)
+    .welcome-container
+        height: 700px
+    .welcome-wrapper
+        width: 85%
+        margin: auto
+        -webkit-box-orient: vertical
+        -webkit-box-direction: normal
+        -ms-flex-direction: column
+        flex-direction: column
+        -webkit-box-align: start
+        -ms-flex-align: start
+        align-items: flex-start
+    .welcome-text
+        width: 100%
+        margin: auto
+        padding-left: 0
+        padding-right: 0px
+        padding-bottom: 20px
+        h3
+            font-size: 24px
+        p
+            font-size: 14px 
+
 
 /* **** Menu Section *** */
 .menu
@@ -346,6 +454,15 @@ header
             letter-spacing: 2px
             width: 100%
             padding: 7px
+
+//Hover effect for buttons
+.action-col
+    input[type='button']
+        transition: all 400ms ease-in-out
+        cursor: pointer
+        &:hover
+            box-shadow: 0 3px 5px -2px $font-color
+
 
 @keyframes slide-right
     0%
