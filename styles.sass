@@ -306,39 +306,130 @@ header
 /* **** Menu Section *** */
 .menu
     height: 700px
+    display: -webkit-box
+    display: -ms-flexbox
     display: flex
+    -webkit-box-pack: center
+    -ms-flex-pack: center
     justify-content: center
     background-color: $myBlack
 .menu-wrapper
     height: 90%
     width: 1100px
     margin: auto
+    display: -webkit-box
+    display: -ms-flexbox
     display: flex
+    -webkit-box-orient: horizontal
+    -webkit-box-direction: normal
+    -ms-flex-direction: row
     flex-direction: row
+    -webkit-box-pack: center
+    -ms-flex-pack: center
     justify-content: center
     background-color: $bg-color
-    .menu-col
-        height: 100%
+.menu-col
+    height: 100%
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
+    flex-direction: column
+    -webkit-box-pack: justify
+    -ms-flex-pack: justify
+    justify-content: space-between
+    .menu-item
+        height: 50%
+        display: -webkit-box
+        display: -ms-flexbox
         display: flex
+        -webkit-box-orient: vertical
+        -webkit-box-direction: normal
+        -ms-flex-direction: column
         flex-direction: column
-        justify-content: space-between
-        .menu-item
-            height: 50%
-            display: flex
-            flex-direction: column
-            justify-content: space-around
-            align-items: center
-            text-align: center
-            padding: 30px
-            color: $font-color
-            h4, .price
-                color: $brownish
-        .menu-item-img
-            height: 50%
-            img
-                height: 100%
-                width: 100%
+        -ms-flex-pack: distribute
+        justify-content: space-around
+        -webkit-box-align: center
+        -ms-flex-align: center
+        align-items: center
+        text-align: center
+        padding: 30px
+        color: $font-color
+        h4, .price
+            color: $brownish
+    .menu-item-img
+        height: 50%
+        img
+            height: 100%
+            width: 100%
 
+/* Media Query - Responsive Menu section */
+@media only screen and (min-width : 768px) and (max-width : 991px)
+    .menu
+        height: 650px
+    .menu-wrapper
+        height: 80%
+    .menu-col
+        .menu-item
+            h4
+                font-size: 18px
+            p
+                font-size: 14px
+
+@media only screen and (min-width : 576px) and (max-width : 768px)
+    .menu
+        height: 900px
+    .menu-wrapper
+        -webkit-box-orient: vertical
+        -webkit-box-direction: normal
+        -ms-flex-direction: column
+        flex-direction: column
+    .menu-col
+        -webkit-box-orient: horizontal
+        -webkit-box-direction: normal
+        -ms-flex-direction: row
+        flex-direction: row
+        height: 280px
+        .menu-item
+            width: 50%
+            height: auto
+        .menu-item-img
+            height: auto
+            width: 50%
+
+@media only screen and (max-width : 576px)
+    .menu
+        height: 1400px
+    .menu-wrapper
+        height: 95%
+        -webkit-box-orient: vertical
+        -webkit-box-direction: normal
+        -ms-flex-direction: column
+        flex-direction: column
+    .menu-col
+        -webkit-box-orient: vertical
+        -webkit-box-direction: normal
+        -ms-flex-direction: column
+        flex-direction: column
+        height: 33.33%
+        .menu-item
+            h4
+                font-size: 18px
+            p
+                font-size: 14px
+        .menu-item-img
+            overflow: hidden
+            img
+                height: 200%
+                -webkit-transform: translateY(-25%)
+                -ms-transform: translateY(-25%)
+                transform: translateY(-25%)
+                width: 576px
+        &:nth-child(2)
+            .menu-item-img
+                order: 2
 
 /* **** Testimonials *** */
 #testimonials
@@ -347,9 +438,17 @@ header
 #testi-wrapper
     padding-top: 100px
     height: 90%
+    display: -webkit-box
+    display: -ms-flexbox
     display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
     flex-direction: column
+    -ms-flex-pack: distribute
     justify-content: space-around
+    -webkit-box-align: center
+    -ms-flex-align: center
     align-items: center
 .testi-row-1
     text-align: center
@@ -364,7 +463,12 @@ header
         padding-bottom: 30px
 .testi-row-2 ul
     max-width: 1280px
+    display: -webkit-box
+    display: -ms-flexbox
     display: flex
+    -webkit-box-orient: horizontal
+    -webkit-box-direction: normal
+    -ms-flex-direction: row
     flex-direction: row
     list-style: none
     padding-left: 0
@@ -390,8 +494,82 @@ header
             span
                 color: $myBlack
 
+/* Media Query - Responsive Menu section */
+@media only screen and (min-width : 768px) and (max-width : 991px)
+    .testi-row-1
+        h3
+            font-size: 1em
+        h4
+            font-size: 1.5em 
+    .testi-row-2 ul
+        li
+            padding: 10px
+            .testi-header p
+                width: 90%
+                font-size: 1em
+                font-weight: 400
+            .testi-content
+                p
+                    font-size: .9em
+                    padding-right: 10px
+                    padding-bottom: 20px
 
-                 
+@media only screen and (min-width : 576px) and (max-width : 768px)
+    #testimonials
+        height: 900px
+    .testi-row-1
+        h3
+            font-size: 1em
+        h4
+            font-size: 1.5em 
+    .testi-row-2 ul
+        flex-wrap: wrap
+        li
+            width: 50%
+            .testi-header p
+                width: 100%
+                font-size: 1em
+                font-weight: 400
+            .testi-content
+                p
+                    font-size: .9em
+                    padding-right: 10px
+                    padding-bottom: 10px
+
+@media only screen and (max-width : 576px)
+    #testimonials
+        height: 1100px
+    .testi-row-1
+        h3
+            font-size: 1em
+        h4
+            font-size: 1.3em
+    .testi-row-2 ul
+        flex-direction: column
+    .testi-row-2 ul
+        width: 90%
+        margin: auto
+        li
+            padding: 0
+            padding-bottom: 20px
+            margin: auto
+            .stars
+                padding-bottom: 5px
+            .testi-header p
+                width: 100%
+                font-size: 1em
+                font-weight: 400
+            .testi-content
+                p
+                    font-size: .9em
+                    padding-right: 0px
+                    padding-bottom: 0px
+                hr
+                    margin-bottom: 2px
+                    width: 20%
+                    border: 1px solid $brownish
+
+                    
 /* **** Hours of Operation and Subscribe Form *** */
 #actions
     height: 850px

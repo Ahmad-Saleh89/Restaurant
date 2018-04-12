@@ -306,7 +306,11 @@ header {
 /* **** Menu Section *** */
 .menu {
   height: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   background-color: #1f1f1f; }
 
@@ -314,32 +318,120 @@ header {
   height: 90%;
   width: 1100px;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   background-color: #F5F5F5; }
-  .menu-wrapper .menu-col {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; }
-    .menu-wrapper .menu-col .menu-item {
-      height: 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-      text-align: center;
-      padding: 30px;
-      color: #939393; }
-      .menu-wrapper .menu-col .menu-item h4, .menu-wrapper .menu-col .menu-item .price {
-        color: #c39d63; }
-    .menu-wrapper .menu-col .menu-item-img {
-      height: 50%; }
-      .menu-wrapper .menu-col .menu-item-img img {
-        height: 100%;
-        width: 100%; }
 
+.menu-col {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .menu-col .menu-item {
+    height: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    color: #939393; }
+    .menu-col .menu-item h4, .menu-col .menu-item .price {
+      color: #c39d63; }
+  .menu-col .menu-item-img {
+    height: 50%; }
+    .menu-col .menu-item-img img {
+      height: 100%;
+      width: 100%; }
+
+/* Media Query - Responsive Menu section */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .menu {
+    height: 650px; }
+
+  .menu-wrapper {
+    height: 80%; }
+
+  .menu-col .menu-item h4 {
+    font-size: 18px; }
+  .menu-col .menu-item p {
+    font-size: 14px; } }
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  .menu {
+    height: 900px; }
+
+  .menu-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+
+  .menu-col {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    height: 280px; }
+    .menu-col .menu-item {
+      width: 50%;
+      height: auto; }
+    .menu-col .menu-item-img {
+      height: auto;
+      width: 50%; } }
+@media only screen and (max-width: 576px) {
+  .menu {
+    height: 1400px; }
+
+  .menu-wrapper {
+    height: 95%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+
+  .menu-col {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 33.33%; }
+    .menu-col .menu-item h4 {
+      font-size: 18px; }
+    .menu-col .menu-item p {
+      font-size: 14px; }
+    .menu-col .menu-item-img {
+      overflow: hidden; }
+      .menu-col .menu-item-img img {
+        height: 200%;
+        -webkit-transform: translateY(-25%);
+        -ms-transform: translateY(-25%);
+        transform: translateY(-25%);
+        width: 576px; }
+    .menu-col:nth-child(2) .menu-item-img {
+      order: 2; } }
 /* **** Testimonials *** */
 #testimonials {
   height: 700px;
@@ -348,9 +440,17 @@ header {
 #testi-wrapper {
   padding-top: 100px;
   height: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center; }
 
 .testi-row-1 {
@@ -367,7 +467,12 @@ header {
 
 .testi-row-2 ul {
   max-width: 1280px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
   list-style: none;
   padding-left: 0; }
@@ -392,6 +497,77 @@ header {
     .testi-row-2 ul li .testi-content span {
       color: #1f1f1f; }
 
+/* Media Query - Responsive Menu section */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .testi-row-1 h3 {
+    font-size: 1em; }
+  .testi-row-1 h4 {
+    font-size: 1.5em; }
+
+  .testi-row-2 ul li {
+    padding: 10px; }
+    .testi-row-2 ul li .testi-header p {
+      width: 90%;
+      font-size: 1em;
+      font-weight: 400; }
+    .testi-row-2 ul li .testi-content p {
+      font-size: 0.9em;
+      padding-right: 10px;
+      padding-bottom: 20px; } }
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  #testimonials {
+    height: 900px; }
+
+  .testi-row-1 h3 {
+    font-size: 1em; }
+  .testi-row-1 h4 {
+    font-size: 1.5em; }
+
+  .testi-row-2 ul {
+    flex-wrap: wrap; }
+    .testi-row-2 ul li {
+      width: 50%; }
+      .testi-row-2 ul li .testi-header p {
+        width: 100%;
+        font-size: 1em;
+        font-weight: 400; }
+      .testi-row-2 ul li .testi-content p {
+        font-size: 0.9em;
+        padding-right: 10px;
+        padding-bottom: 10px; } }
+@media only screen and (max-width: 576px) {
+  #testimonials {
+    height: 1100px; }
+
+  .testi-row-1 h3 {
+    font-size: 1em; }
+  .testi-row-1 h4 {
+    font-size: 1.3em; }
+
+  .testi-row-2 ul {
+    flex-direction: column; }
+
+  .testi-row-2 ul {
+    width: 90%;
+    margin: auto; }
+    .testi-row-2 ul li {
+      padding: 0;
+      padding-bottom: 20px;
+      margin: auto; }
+      .testi-row-2 ul li .stars {
+        padding-bottom: 5px; }
+      .testi-row-2 ul li .testi-header p {
+        width: 100%;
+        font-size: 1em;
+        font-weight: 400; }
+      .testi-row-2 ul li .testi-content p {
+        font-size: 0.9em;
+        padding-right: 0px;
+        padding-bottom: 0px; }
+      .testi-row-2 ul li .testi-content hr {
+        margin-bottom: 2px;
+        width: 20%;
+        border: 1px solid #c39d63; } }
 /* **** Hours of Operation and Subscribe Form *** */
 #actions {
   height: 850px;
