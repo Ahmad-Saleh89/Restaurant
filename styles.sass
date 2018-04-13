@@ -478,7 +478,7 @@ header
             padding-bottom: 30px
             color: $brownish
         .testi-header p
-            width: 70%
+            width: 95%
             font-size: 1.3em
             font-weight: 500
         .testi-content
@@ -569,7 +569,7 @@ header
                     width: 20%
                     border: 1px solid $brownish
 
-                    
+
 /* **** Hours of Operation and Subscribe Form *** */
 #actions
     height: 850px
@@ -577,30 +577,51 @@ header
     background-size: cover
     background-color: $myBlack
     background-blend-mode: multiply
+    display: -webkit-box
+    display: -ms-flexbox
     display: flex
+    -webkit-box-pack: center
+    -ms-flex-pack: center
     justify-content: center
 #actions-wrapper
     height: 80%
     width: 1280px
     margin: auto
+    display: -webkit-box
+    display: -ms-flexbox
     display: flex
+    -webkit-box-orient: horizontal
+    -webkit-box-direction: normal
+    -ms-flex-direction: row
     flex-direction: row
+    -ms-flex-pack: distribute
     justify-content: space-around
+    -webkit-box-align: center
+    -ms-flex-align: center
     align-items: center
     color: $bg-color
 .action-col
     height: 100%
     width: 45%
     background-color: $myBlack
+    display: -webkit-box
+    display: -ms-flexbox
     display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
     flex-direction: column
+    -webkit-box-pack: start
+    -ms-flex-pack: start
     justify-content: flex-start
+    -webkit-box-align: center
+    -ms-flex-align: center
     align-items: center
     padding-top: 70px
     text-align: center
     letter-spacing: 2px
 .hours
-    width: 60% 
+    width: 60%
     hr
         border: 1px solid $brownish
     input
@@ -622,6 +643,7 @@ header
 .subscribe
     padding-top: 30px
     form
+        -webkit-animation: slide-right 900ms ease-in-out normal forwards
         animation: slide-right 900ms ease-in-out normal forwards
         padding-top: 30px
         input[type="button"]
@@ -636,6 +658,8 @@ header
 //Hover effect for buttons
 .action-col
     input[type='button']
+        -webkit-transition: all 400ms ease-in-out
+        -o-transition: all 400ms ease-in-out
         transition: all 400ms ease-in-out
         cursor: pointer
         &:hover
@@ -649,3 +673,80 @@ header
     100%
         opacity: 1
         transform: translateY(0)
+
+/* Media Query - Responsive Hours and Subsctibe section */
+@media only screen and (min-width : 768px) and (max-width : 991px)
+    .action-col
+        h3
+            font-size: 1.3em
+    .hours, .contact
+        input
+            font-size: 14px
+            padding: 5px 20px
+            font-weight: 400
+            letter-spacing: 1px
+    .contact
+        p
+            max-width: 80%
+            margin: auto
+    .subscribe
+        h3
+            font-size: 1.1em
+
+@media only screen and (min-width : 576px) and (max-width : 768px)
+    #actions
+        height: 1350px
+    #actions-wrapper
+        height: 95%
+        -webkit-box-orient: vertical
+        -webkit-box-direction: normal
+        -ms-flex-direction: column
+        flex-direction: column
+    .action-col
+        width: 90%
+        height: 40%
+        &:nth-child(2)
+            height: 52%
+    .hours input
+        margin-top: 20px
+    .contact
+        p
+            max-width: 95%
+            margin: auto
+    .subscribe
+        width: 85%
+        h3
+            font-size: 1.1em
+
+@media only screen and (max-width : 576px)
+    #actions
+        height: 1350px
+    #actions-wrapper
+        height: 95%
+        -webkit-box-orient: vertical
+        -webkit-box-direction: normal
+        -ms-flex-direction: column
+        flex-direction: column
+    .action-col
+        width: 90%
+        height: 40%
+        h3
+            font-size: 1em
+        &:nth-child(2)
+            height: 52%
+    .hours
+        width: 90%
+        input
+            margin-top: 20px
+            font-size: 14px
+            letter-spacing: 1px
+            padding: 5px 14px
+    .contact
+        p
+            max-width: 95%
+            margin: auto
+            font-size: 12px
+    .subscribe
+        width: 90%
+        h3
+            font-size: 1em
