@@ -334,7 +334,7 @@ header {
 
 .menu-wrapper {
   height: 90%;
-  width: 1100px;
+  max-width: 1100px;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -392,8 +392,7 @@ header {
     .menu-col .menu-item-img img {
       opacity: 0.9;
       height: 100%;
-      width: 100%;
-      animation: 8s ease-in-out 200ms forwards normal; }
+      width: 100%; }
 
 /* Media Query - Responsive Menu section */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -431,25 +430,31 @@ header {
       width: 50%; } }
 @media only screen and (max-width: 576px) {
   .menu {
-    height: 1400px; }
+    height: 1400px;
+    width: 100vw; }
 
   .menu-wrapper {
     height: 95%;
+    width: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; }
 
   .menu-col {
+    width: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
     height: 33.33%; }
-    .menu-col .menu-item h4 {
-      font-size: 18px; }
-    .menu-col .menu-item p {
-      font-size: 14px; }
+    .menu-col .menu-item {
+      width: 100%; }
+      .menu-col .menu-item h4 {
+        font-size: 18px; }
+      .menu-col .menu-item p {
+        width: 95%;
+        font-size: 14px; }
     .menu-col .menu-item-img {
       overflow: hidden; }
       .menu-col .menu-item-img img {
@@ -543,7 +548,7 @@ header {
     .testi-row-2 ul li .testi-content span {
       color: #1f1f1f; }
 
-/* Media Query - Responsive Menu section */
+/* Media Query - Responsive Testimonials section */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .testi-row-1 h3 {
     font-size: 1em; }
@@ -841,17 +846,6 @@ header {
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0); } }
-@keyframes zoom-in {
-  0% {
-    opacity: 0.9;
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1); }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1.15);
-    -ms-transform: scale(1.15);
-    transform: scale(1.15); } }
 @keyframes strech {
   0% {
     width: 5px; }
