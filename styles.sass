@@ -31,7 +31,7 @@ header
     transition: all 400ms ease-in-out
     z-index: 100
     &.shrink-nav
-        background-color: rgba(250,250,250,.8) !important
+        background-color: rgba($brownish,.8) !important
         box-shadow: 0 0 5px -2px gray
         .navbar-brand h1
             font-size: 1.2em
@@ -40,7 +40,7 @@ header
 
 .navbar-brand h1
     color: $bg-color
-    letter-spacing: 8px
+    letter-spacing: 4px
     font-size: 1.5em
     transition: all 400ms ease-in-out
 
@@ -116,8 +116,14 @@ header
         font-size: 20px
         color: $font-color
         padding: 20px
-        background-color: rgba(#fff, .05)
+        background-color: rgba($brownish, .09)
         margin-bottom: 30px
+        opacity: 0
+        -webkit-transform: translateY(-15%)
+        -ms-transform: translateY(-15%)
+        transform: translateY(-15%)
+        -webkit-animation: slide-down 1.5s ease-in-out 700ms forwards normal
+        animation: slide-down 1.5s ease-in-out 700ms forwards normal
     a
         padding: 10px 20px
         background-color: transparant
@@ -127,9 +133,8 @@ header
         -o-transition: all 300ms ease-in-out
         transition: all 300ms ease-in-out
         &:hover
-            background-color: $font-color
-            text-decoration: none
-        
+            background-color: $brownish
+            text-decoration: none     
 
 /* Media Query - Responsive header design */
 @media only screen and (min-width : 991px)
@@ -184,7 +189,7 @@ header
         height: 400px
         background-size: auto 450px
     .navbar
-        background-color: rgba(250,250,250,.8) !important
+        background-color: rgba($brownish,.8) !important
     .navbar-brand
         padding-left: 5px
         h1
@@ -234,7 +239,7 @@ header
     font-family: $font-family
     width: 50%
     h3
-        font-size: 48px
+        font-size: 38px
         color: $myBlack
     hr
         width: 40%
@@ -244,8 +249,21 @@ header
     p
         line-height: 2em
         color: #939393
+        opacity: 0
+        -webkit-transform: translateY(-15%)
+        -ms-transform: translateY(-15%)
+        transform: translateY(-15%)
+        -webkit-animation: 1.5s ease-in-out 300ms forwards normal
+        animation: 1.5s ease-in-out 300ms forwards normal
+
 .welcome-img
     max-width: 400px
+    opacity: 0
+    -webkit-transform: translateX(20%)
+    -ms-transform: translateX(20%)
+    transform: translateX(20%)
+    -webkit-animation: 1.5s ease-in-out 300ms forwards normal
+    animation: 1.5s ease-in-out 300ms forwards normal
     img
         width: 100%
         height: auto
@@ -254,7 +272,7 @@ header
 @media only screen and (min-width : 768px) and (max-width : 991px)
     .welcome-text
         h3
-            font-size: 32px
+            font-size: 28px
 
 @media only screen and (min-width : 576px) and (max-width : 768px)
     .welcome-container
@@ -276,7 +294,7 @@ header
         padding-right: 0px
         padding-bottom: 20px
         h3
-            font-size: 28px
+            font-size: 30px
 
 @media only screen and (max-width : 576px)
     .welcome-container
@@ -298,7 +316,7 @@ header
         padding-right: 0px
         padding-bottom: 20px
         h3
-            font-size: 24px
+            font-size: 28px
         p
             font-size: 14px 
 
@@ -357,13 +375,23 @@ header
         text-align: center
         padding: 30px
         color: $font-color
+        p
+            opacity: 0
+            -webkit-transform: translateY(-15%)
+            -ms-transform: translateY(-15%)
+            transform: translateY(-15%)
+            -webkit-animation: 1.5s ease-in-out 300ms forwards normal
+            animation: 1.5s ease-in-out 300ms forwards normal 
         h4, .price
             color: $brownish
     .menu-item-img
         height: 50%
+        overflow: hidden
         img
+            opacity: .9
             height: 100%
             width: 100%
+            animation: 8s ease-in-out 200ms forwards normal
 
 /* Media Query - Responsive Menu section */
 @media only screen and (min-width : 768px) and (max-width : 991px)
@@ -440,7 +468,7 @@ header
     height: 90%
     display: -webkit-box
     display: -ms-flexbox
-    display: flex
+    display: none
     -webkit-box-orient: vertical
     -webkit-box-direction: normal
     -ms-flex-direction: column
@@ -454,6 +482,12 @@ header
     text-align: center
     h3
         font-size: 1.3em
+        opacity: 0
+        -webkit-transform: translateY(50%)
+        -ms-transform: translateY(50%)
+        transform: translateY(50%)
+        -webkit-animation: slide-up 1s ease-in-out 200ms forwards normal
+        animation: slide-up 1s ease-in-out 200ms forwards normal
     hr
         border: 2px solid $brownish
         width: 50%
@@ -477,6 +511,12 @@ header
         .stars
             padding-bottom: 30px
             color: $brownish
+            opacity: 0
+            -webkit-transform: translateY(50%)
+            -ms-transform: translateY(50%)
+            transform: translateY(50%)
+            -webkit-animation: slide-up 1s ease-in-out 500ms forwards normal
+            animation: slide-up 1s ease-in-out 500ms forwards normal
         .testi-header p
             width: 95%
             font-size: 1.3em
@@ -487,6 +527,12 @@ header
                 color: $font-color
                 padding-right: 20px
                 padding-bottom: 30px
+                opacity: 0
+                -webkit-transform: translateX(20%)
+                -ms-transform: translateX(20%)
+                transform: translateX(20%)
+                -webkit-animation: slide-left 1.5s ease-in-out 700ms forwards normal
+                animation: slide-left 1.5s ease-in-out 700ms forwards normal
             hr
                 width: 30%
                 border: 2px solid $brownish
@@ -587,9 +633,7 @@ header
     height: 80%
     width: 1280px
     margin: auto
-    display: -webkit-box
-    display: -ms-flexbox
-    display: flex
+    display: none
     -webkit-box-orient: horizontal
     -webkit-box-direction: normal
     -ms-flex-direction: row
@@ -620,10 +664,19 @@ header
     padding-top: 70px
     text-align: center
     letter-spacing: 2px
+    h3
+        opacity: 0
+        -webkit-transform: translateY(50%)
+        -ms-transform: translateY(50%)
+        transform: translateY(50%)
+        -webkit-animation: slide-up 400ms ease-in-out 200ms forwards normal
+        animation: slide-up 400ms ease-in-out 200ms forwards normal
 .hours
     width: 60%
     hr
         border: 1px solid $brownish
+        width: 5px
+        animation: strech 2s ease-in-out 200ms forwards normal
     input
         margin-top: 50px
         padding: 8px 40px
@@ -643,8 +696,9 @@ header
 .subscribe
     padding-top: 30px
     form
-        -webkit-animation: slide-right 900ms ease-in-out normal forwards
-        animation: slide-right 900ms ease-in-out normal forwards
+        opacity: 0
+        -webkit-animation: slide-right 1.5s ease-in-out 1s normal forwards
+        animation: slide-right 1.5s ease-in-out 1s normal forwards
         padding-top: 30px
         input[type="button"]
             background-color: $brownish
@@ -669,7 +723,7 @@ header
 @keyframes slide-right
     0%
         opacity: 0
-        transform: translateY(-50px)
+        transform: translateY(-30px)
     100%
         opacity: 1
         transform: translateY(0)
@@ -750,3 +804,58 @@ header
         width: 90%
         h3
             font-size: 1em
+
+
+/* @@@@@ Animations Keyframes @@@@ */
+@keyframes slide-down
+    0%
+        -webkit-transform: translateY(-15%)
+        -ms-transform: translateY(-15%)
+        transform: translateY(-15%)
+        opacity: 0
+    100%
+        -webkit-transform: translateY(0)
+        -ms-transform: translateY(0)
+        transform: translateY(0)
+        opacity: 1
+
+@keyframes slide-up
+    0%
+        -webkit-transform: translateY(50%)
+        -ms-transform: translateY(50%)
+        transform: translateY(50%)
+        opacity: 0
+    100%
+        -webkit-transform: translateY(0)
+        -ms-transform: translateY(0)
+        transform: translateY(0)
+        opacity: 1
+
+@keyframes slide-left
+    0%
+        opacity: 0
+        -webkit-transform: translateX(20%)
+        -ms-transform: translateX(20%)
+        transform: translateX(20%)
+    100%
+        opacity: 1
+        -webkit-transform: translateX(0)
+        -ms-transform: translateX(0)
+        transform: translateX(0)
+
+@keyframes zoom-in
+    0%
+        opacity: .9
+        -webkit-transform: scale(1)
+        -ms-transform: scale(1)
+        transform: scale(1)    
+    100%
+        opacity: 1
+        -webkit-transform: scale(1.15)
+        -ms-transform: scale(1.15)
+        transform: scale(1.15)
+@keyframes strech
+    0%
+        width: 5px
+    100%
+        width: 100%
