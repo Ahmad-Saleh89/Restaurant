@@ -1,0 +1,137 @@
+$bg-color: #F5F5F5
+$brownish: #c39d63
+$font-color: #939393
+$myBlack: #1f1f1f
+$font-family: 'Playfair Display',Georgia
+$myFont: 'Montserrat',Helvetica,Arial,Lucida,sans-serif
+    
+header
+    height: 600px
+    background-image: url(about_imgs/about_hero.jpg)
+/* Media Query - Responsive About header design */
+@media only screen and (min-width : 768px) and (max-width : 991px)
+    header
+        height: 550px
+        background-size: auto 600px
+@media only screen and (min-width : 576px) and (max-width : 768px)
+    header
+        height: 500px
+@media only screen and (max-width : 576px)
+    header
+        height: 400px
+
+/* ***** About Section 1 ***** */
+#about-sec-1
+    height: 700px
+    width: 100%
+.sec-1-wrapper
+    height: 100%
+    padding-top: 100px
+    max-width: 1200px
+    margin: auto
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+.img-wrapper
+    height: 100%
+    width: 45%
+    text-align: center
+    margin-top: -25%
+    z-index: 3
+    img
+        height: 120%
+        box-shadow: 3px 8px 10px -1px rgba(0,0,0,.2)
+.about-intro
+    font-family: $myFont
+    height: 80%
+    width: 45%
+    z-index: 4
+    h2
+        color: $font-color
+        font-size: 1.2em
+    hr
+        width: 80px
+        border: 2px solid $brownish
+        margin-left: 0
+    h3
+        font-size: 48px
+        padding-bottom: 30px
+        color: $myBlack
+    .intro-content
+        color: $font-color
+        padding-bottom: 30px
+        padding-right: 30px
+    .intro-footer
+        p
+            color: $myBlack
+            font-style: italic
+        span
+            color: $brownish
+            font-style: italic
+
+/* Media Query - Responsive About Section 1 design */
+
+@media only screen and (min-width : 769px) and (max-width : 991px)
+    .about-intro
+        width: 60%
+        height: 90%
+        padding: 30px
+        h2
+            font-size: 1em
+        h3
+            font-size: 38px
+    .img-wrapper
+        margin-left: -160px
+
+@media only screen and (min-width : 577px) and (max-width : 768px)
+    #about-sec-1
+        height: 1100px
+    .sec-1-wrapper
+        flex-direction: column
+        justify-content: space-around
+        padding-top: 0px
+    .img-wrapper
+        order: 2
+        height: 48%
+        width: 90%
+        overflow: hidden
+        img
+            height: 200%
+            margin-top: -30%
+            margin-left: -15%
+    .about-intro
+        height: 48%
+        width: 90%
+    
+@media only screen and (max-width : 576px)
+    #about-sec-1
+        height: 900px
+    .sec-1-wrapper
+        flex-direction: column
+        justify-content: center
+        padding-top: 0
+    .img-wrapper
+        order: 2
+        height: 35%
+        width: 90%
+        overflow-y: hidden
+        img
+            height: auto
+            width: 100%
+            margin-top: -30%
+            margin-left: -10%
+    .about-intro
+        height: 60%
+        width: 90%
+        h3
+            font-size: 28px
+            padding-bottom: 5px
+        .intro-content
+            font-size: 14px
+            padding-bottom: 0
+        .intro-footer p
+            font-size: 12px
+            margin-bottom: 5px
+    
+
