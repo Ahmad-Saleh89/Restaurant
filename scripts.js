@@ -19,32 +19,33 @@ $(document).ready(function(){
 
         // Apply These Animations only in Home Page
         if (document.location.pathname == "/index.html") {
-            var $welcome = $('.welcome-container').offset().top;
-            if(scrollPos > $welcome - $(window).height()/1.2){
-                $('.welcome-container').find('.welcome-text p').css("animation-name", "slide-down");
-                $('.welcome-container').find('.welcome-img').css("animation-name", "slide-left");
-            }
+            var $welcome = $('.welcome-container');
+                var welcomeOffset = $welcome.offset().top;
+                if(scrollPos > welcomeOffset - $(window).height()/1.2){
+                    $('.welcome-container').find('.welcome-text p').css("animation-name", "slide-down");
+                    $('.welcome-container').find('.welcome-img').css("animation-name", "slide-left");
+                }
+
     
-            var $menu = $('.menu').offset().top;
-            if(scrollPos > $menu - $(window).height()/1.2){
+            var $menuOffset = $('.menu').offset().top;
+            if(scrollPos > $menuOffset - $(window).height()/1.2){
                 $('.menu').find('.menu-col p').css("animation-name", "slide-down");
                 $('.menu').find('.menu-item-img img').css('animation-name', 'zoom-in');
             }
     
-            var $testimonials = $('#testimonials').offset().top;
-            if(scrollPos > $testimonials - $(window).height()/1.2){
+            var $testimonialsOffset = $('#testimonials').offset().top;
+            if(scrollPos > $testimonialsOffset - $(window).height()/1.2){
                 $('#testi-wrapper').css('display', 'flex');
             }
     
-            var $actions = $('#actions').offset().top;
-            if(scrollPos > $actions - $(window).height()/1.2){
+            var $actionsOffset = $('#actions').offset().top;
+            if(scrollPos > $actionsOffset - $(window).height()/1.2){
                 $('#actions-wrapper').css("display","flex");
             }
          }
     });
 
     // Slider in About Page
-    if (document.location.pathname == "/about/about.html") {
         var $slider = $('.slider-wrapper').find('.slider');
         var interval;
   
@@ -97,5 +98,4 @@ $(document).ready(function(){
             $('.slider li:nth-child('+(dotIndex+1)+')').addClass('showing');
         });
 
-    }
 });
